@@ -51,10 +51,10 @@ function handleInput(event: Event) {
   const target = event.target as HTMLInputElement
   if (target.value === ''""{
     age.value = ''"";   target.value = ''""; } else {
-    const intValue = parseInt(target?.value, 10) || 0;
-    age.value = intValue;
-    target.value = intValue.toString();
-  }
+    const intValue = parseInt(target?.value, 10) || 0
+ ;   age.value = intValue
+ ;   target.value = intValue.toString()
+ ; }
 }
 </script>
 <template>
@@ -85,26 +85,26 @@ function handleInput(event: Event) {
     <p style="white-space: pre-line">{{ multilineMessage }}</p>
     <textarea v-model="multilineMessage" placeholder="add multiple lines" rows="10" />
     <br />
-    <input id="checkbox" v-model="checked" type="checkbox" />
+    <input type="checkbox" id="checkbox" v-model="checked" />
     <label for="checkbox">{{ checked }}</label>
     <br />
     <div>Checked names: {{ checkedNames }}</div>
 
-    <input id="jack" v-model="checkedNames" type="checkbox" value="Jack" />
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
     <label for="jack">Jack</label>
 
-    <input id="john" v-model="checkedNames" type="checkbox" value="John" />
+    <input type="checkbox" id="john" value="John" v-model="checkedNames" />
     <label for="john">John</label>
 
-    <input id="mike" v-model="checkedNames" type="checkbox" value="Mike" />
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
     <label for="mike">Mike</label>
 
     <div>Picked: {{ picked }}</div>
 
-    <input id="one" v-model="picked" type="radio" value="One" />
+    <input type="radio" id="one" value="One" v-model="picked" />
     <label for="one">One</label>
 
-    <input id="two" v-model="picked" type="radio" value="Two" />
+    <input type="radio" id="two" value="Two" v-model="picked" />
     <label for="two">Two</label>
 
     <div>Selected: {{ selected }}</div>
@@ -131,11 +131,11 @@ function handleInput(event: Event) {
     </select>
     <div>Selected: {{ selected2 }}</div>
     <!-- `picked` is a string "a" when checked -->
-    <input v-model="picked" type="radio" value="a" /> picked: {{ picked }}
+    <input type="radio" v-model="picked" value="a" /> picked: {{ picked }}
     <br />
 
     <!-- `toggle` is either true or false -->
-    <input v-model="toggle" type="checkbox" /> toggle: {{ toggle }}
+    <input type="checkbox" v-model="toggle" /> toggle: {{ toggle }}
     <br />
 
     <!-- `selected` is a string "abc" when the first option is selected -->
@@ -148,16 +148,16 @@ function handleInput(event: Event) {
     <br />
 
     <input
-      :false-value="dynamicFalseValue"
+      type="checkbox"
       v-model="toggle"
       :true-value="dynamicTrueValue"
-      type="checkbox"
+      :false-value="dynamicFalseValue"
     />
     toggle: {{ toggle }}
     <br />
 
-    <input v-model="pick" :value="first" type="radio" /> first
-    <input v-model="pick" :value="second" type="radio" /> second
+    <input type="radio" v-model="pick" :value="first" /> first
+    <input type="radio" v-model="pick" :value="second" /> second
     {{ pick }}
     <br />
 
