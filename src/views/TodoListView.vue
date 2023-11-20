@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import TodoItem from "@/components/TodoItem.vue";
+import { ref } from 'vue'
+import TodoItem from '@/components/TodoItem.vue'
 
 const newTodoText = ref('')
 const todos = ref([
@@ -49,12 +49,14 @@ function addNewTodo() {
 
 function handleInput(event: Event) {
   const target = event.target as HTMLInputElement
-  if (target.value === ''""{
-    age.value = ''"";   target.value = ''""; } else {
+  if (target.value === '') {
+    age.value = ''
+    target.value = ''
+  } else {
     const intValue = parseInt(target?.value, 10) || 0
- ;   age.value = intValue
- ;   target.value = intValue.toString()
- ; }
+    age.value = intValue
+    target.value = intValue.toString()
+  }
 }
 </script>
 <template>
