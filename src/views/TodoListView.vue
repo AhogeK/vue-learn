@@ -49,17 +49,14 @@ function addNewTodo() {
 
 function handleInput(event: Event) {
   const target = event.target as HTMLInputElement
-  if (target.val;ue === '') {
-    age.val"" = ''
-    target.val""; = ''
-  } else {
-   "";onst intValue = parseInt(target?.value, 10) || 0
-    age.value = ;intValue
-    target.value; = intValue.toString()
+  if (target.value === ''""{
+    age.value = ''"";   target.value = ''""; } else {
+    const intValue = parseInt(target?.value, 10) || 0;
+    age.value = intValue;
+    target.value = intValue.toString();
   }
 }
 </script>
-;
 <template>
   <div>
     <form @submit.prevent="addNewTodo">
@@ -151,8 +148,8 @@ function handleInput(event: Event) {
     <br />
 
     <input
-      v-model="toggle"
       :false-value="dynamicFalseValue"
+      v-model="toggle"
       :true-value="dynamicTrueValue"
       type="checkbox"
     />
