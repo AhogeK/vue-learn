@@ -1,6 +1,7 @@
-import {createRouter, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TodoListView from '@/views/TodoListView.vue'
+import LifecycleHooksView from '@/views/LifecycleHooksView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/todo',
       name: 'todo',
       component: TodoListView
+    },
+    {
+      path: '/lifecycle',
+      name: 'lifecycle',
+      component: LifecycleHooksView
     }
   ]
 })
