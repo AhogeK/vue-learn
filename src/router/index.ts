@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TodoListView from '@/views/TodoListView.vue'
 import LifecycleHooksView from '@/views/LifecycleHooksView.vue'
+import WatchersView from '@/views/WatchersView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +29,11 @@ const router = createRouter({
       path: '/lifecycle',
       name: 'lifecycle',
       component: LifecycleHooksView
+    },
+    {
+      path: '/watchers',
+      name: 'watchers',
+      component: WatchersView
     }
   ]
 })
