@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import TodoListView from '@/views/TodoListView.vue'
 import LifecycleHooksView from '@/views/LifecycleHooksView.vue'
 import WatchersView from '@/views/WatchersView.vue'
+import TemplateRefsView from '@/views/TemplateRefsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,11 @@ const router = createRouter({
       path: '/watchers',
       name: 'watchers',
       component: WatchersView
+    },
+    {
+      path: '/template-refs',
+      name: 'template-refs',
+      component: TemplateRefsView
     }
   ]
 })

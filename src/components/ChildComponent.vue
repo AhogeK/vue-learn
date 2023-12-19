@@ -49,6 +49,11 @@ function stopObserving() {
     console.log('watchEffect stopped')
   }
 }
+
+// Compiler macros, such as defineExpose, don't need to be imported
+defineExpose({
+  stopObserving
+})
 </script>
 <template>
   <div>
