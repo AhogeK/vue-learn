@@ -40,6 +40,11 @@ const router = createRouter({
       path: '/template-refs',
       name: 'template-refs',
       component: TemplateRefsView
+    },
+    {
+      path: '/css-grid',
+      name: 'css-grid',
+      component: () => import('../views/CssGridView.vue')
     }
   ]
 })

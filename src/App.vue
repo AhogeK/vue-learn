@@ -17,6 +17,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/lifecycle">Life Cycle Hooks</RouterLink>
         <RouterLink to="/watchers">Watchers</RouterLink>
         <RouterLink to="/template-refs">Template Refs</RouterLink>
+        <RouterLink to="/css-grid">CSS Grid</RouterLink>
       </nav>
     </div>
   </header>
