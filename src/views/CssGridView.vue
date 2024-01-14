@@ -32,4 +32,8 @@
 .box {
   border: 1px solid red;
 }
+
+.box1 {
+  grid-column-start: span 2;
+}
 </style>
