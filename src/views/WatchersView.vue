@@ -90,13 +90,13 @@ watch(
   { deep: true }
 )
 
-watchEffect((callBack) => {
-  console.log('1')
+watchEffect(async (callBack) => {
+  console.log('111')
   // 触发异步操作
-  fetchData()
+  await fetchData()
 
   callBack(() => {
-    console.log('2')
+    console.log('222')
   })
 })
 
