@@ -26,6 +26,8 @@ onMounted(() => {
 
 <template>
   <div class="about">
+    <!-- Accessing window or document directly is restricted -->
+    <!-- {{ window.innerWidth }} -->
     <h1>This is an about page</h1>
     <button
       class="button"
