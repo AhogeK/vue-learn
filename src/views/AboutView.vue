@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useCounterStore } from '@/stores/counter'
-import { onMounted, reactive, ref, watch } from 'vue'
+import { computed, onMounted, reactive, ref, watch } from 'vue'
 
 const counter = useCounterStore()
 const rawHtml = '<span style="color: red">This should be red.</span>'
@@ -16,6 +16,11 @@ const myObject = reactive({
 })
 
 const isActive = ref(true)
+
+const aboutActiveClass = computed(() => ({
+  active: isActive.value,
+  hidden: !isActive.value
+}))
 
 // 当active为false是，1秒后变为true
 watch(isActive, (value) => {
@@ -37,7 +42,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="about" :class="{ active: isActive }">
+  <div class="about" :class="aboutActiveClass">
     <!-- Accessing window or document directly is restricted -->
     <!-- {{ window.innerWidth }} -->
     <h1>This is an about page</h1>
@@ -94,19 +99,17 @@ onMounted(() => {
 
 <style>
 .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
   visibility: hidden;
 }
 
 .active {
   visibility: visible;
-}
-
-@media (min-width: 1024px) {
-  .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 #dynamic-id {
