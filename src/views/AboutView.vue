@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useCounterStore } from '@/stores/counter'
-import { onMounted, reactive, ref } from 'vue'
+import { onMounted, reactive, ref, watch } from 'vue'
 
 const counter = useCounterStore()
 const rawHtml = '<span style="color: red">This should be red.</span>'
@@ -15,6 +15,18 @@ const myObject = reactive({
   publishedAt: '2016-04-10'
 })
 
+const isActive = ref(true)
+
+// 当active为false是，1秒后变为true
+watch(isActive, (value) => {
+  console.log('isActive changed to:', value)
+  if (!value) {
+    setTimeout(() => {
+      isActive.value = true
+    }, 3000)
+  }
+})
+
 items.value.forEach((item, index) => {
   console.log(parentMessage, item.message, index)
 })
@@ -25,7 +37,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="about">
+  <div class="about" :class="{ active: isActive }">
     <!-- Accessing window or document directly is restricted -->
     <!-- {{ window.innerWidth }} -->
     <h1>This is an about page</h1>
@@ -45,6 +57,8 @@ onMounted(() => {
     >
       Count is: {{ counter.count }}
     </button>
+    <br />
+    <button class="button" @click="isActive = !isActive">Toggle active</button>
     <p>Using text interpolation: {{ rawHtml }}</p>
     <p>Using v-html directive: <span v-html="rawHtml"></span></p>
     <p v-bind:id="dynamicId">with v-bind dynamic id</p>
@@ -79,6 +93,14 @@ onMounted(() => {
 </template>
 
 <style>
+.about {
+  visibility: hidden;
+}
+
+.active {
+  visibility: visible;
+}
+
 @media (min-width: 1024px) {
   .about {
     display: flex;
