@@ -22,6 +22,8 @@ const aboutActiveClass = computed(() => ({
   hidden: !isActive.value
 }))
 
+const fontColorRed = ref('red')
+
 // 当active为false是，1秒后变为true
 watch(isActive, (value) => {
   console.log('isActive changed to:', value)
@@ -94,6 +96,7 @@ onMounted(() => {
     <div v-for="item of items" :key="item.message">
       {{ item.message }}
     </div>
+    <p :style="{ color: fontColorRed }">Binding inline styles</p>
   </div>
 </template>
 
